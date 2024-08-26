@@ -1,9 +1,7 @@
 <template>
-  <div></div>
+  <div class="w-screen"></div>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup></script>
 
 <style></style>
