@@ -1,17 +1,17 @@
 <template>
-  <div class="relative">
+  <div class="relative lg:pt-0 pt-16">
     <div class="carousel w-full">
       <div id="item1" class="carousel-item w-full">
-        <NuxtImg src="editedbg.jpg" class="w-full" />
+        <NuxtImg src="background/editedbg.jpg" class="w-full" />
       </div>
       <div id="item2" class="carousel-item w-full">
-        <NuxtImg src="editedjas.jpg" class="w-full" />
+        <NuxtImg src="background/editedjas.jpg" class="w-full" />
       </div>
       <div id="item3" class="carousel-item w-full">
-        <NuxtImg src="editedman.jpg" class="w-full" />
+        <NuxtImg src="background/editedman.jpg" class="w-full" />
       </div>
       <div id="item4" class="carousel-item w-full">
-        <NuxtImg src="editedshoes.jpg" class="w-full" />
+        <NuxtImg src="background/editedshoes.jpg" class="w-full" />
       </div>
     </div>
     <div
@@ -37,6 +37,6 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style></style>

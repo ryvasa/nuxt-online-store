@@ -2,7 +2,7 @@
   <div class="relative">
     <NuxtImg
       class="h-screen w-screen object-cover fixed -z-10 hidden lg:block"
-      src="bg.jpg"
+      src="background/bg.jpg"
       alt="background"
     />
     <div class="fixed h-full w-3/5 lg:flex justify-end hidden">
@@ -19,6 +19,6 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style></style>
