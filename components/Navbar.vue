@@ -1,20 +1,33 @@
 <template>
-  <div class="navbar bg-base-200 fixed z-10">
+  <div
+    :class="[
+      'navbar fixed z-10 w-full transition-all duration-300',
+      isAtTop ? 'bg-transparent' : 'bg-base-200',
+    ]"
+  >
     <div class="flex-1">
       <nuxt-link to="/" class="btn btn-ghost text-xl"
-        ><p><span class="text-primary">On</span>Store</p></nuxt-link
+        ><p :class="[isAtTop && 'text-base-200']">
+          <span class="text-primary">On</span>Store
+        </p></nuxt-link
       >
     </div>
-    <div class="flex-none gap-2">
+    <div class="flex-none gap-1 lg:gap-2">
       <div class="flex">
         <input
+          @input="handleInput"
           id="search"
           type="text"
-          class="bg-transparent outline-none px-2 border-b-2 border-transparent focus:border-gray-500 transition-all duration-200"
+          :class="[
+            'focus:placeholder:text-base-200 placeholder:text-transparent max-w-40 bg-red-600 outline-none px-2 border-b-2 border-transparent focus:border-primary transition-all duration-200',
+            isAtTop && 'text-base-200 placeholder:text-base-200',
+            search.length > 0 && 'border-gray-500',
+          ]"
           placeholder="Search"
         />
-        <label for="search" class="btn btn-ghost btn-circle">
+        <label for="search" class="btn btn-ghost btn-circle btn-sm lg:btn-md">
           <svg
+            :class="[isAtTop && 'text-base-200']"
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
             fill="none"
@@ -31,9 +44,13 @@
         </label>
       </div>
 
-      <label for="notification" class="btn btn-ghost btn-circle">
+      <label
+        for="notification"
+        class="btn btn-ghost btn-circle btn-sm lg:btn-md"
+      >
         <div class="indicator">
           <svg
+            :class="[isAtTop && 'text-base-200']"
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
             fill="none"
@@ -50,11 +67,11 @@
           <span class="badge badge-error badge-sm indicator-item">8</span>
         </div>
       </label>
-      <label for="cart" class="btn btn-ghost btn-circle">
+      <label for="cart" class="btn btn-ghost btn-circle btn-sm lg:btn-md">
         <div class="indicator">
           <svg
+            :class="['h-5 w-5', isAtTop && 'text-base-200']"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -70,7 +87,11 @@
         </div>
       </label>
       <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost btn-circle btn-sm lg:btn-md avatar"
+        >
           <div class="w-10 rounded-full">
             <img
               alt="Tailwind CSS Navbar component"
@@ -85,13 +106,34 @@
           <li>
             <nuxt-link to="/profile">Edit Profile</nuxt-link>
           </li>
-          <li><nuxt-link to="/logout">Logout</nuxt-link></li>
+          <li><nuxt-link to="/transaction">Order Transaction</nuxt-link></li>
+          <li><nuxt-link to="/login">Logout</nuxt-link></li>
         </ul>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+const search = ref('');
+const isAtTop = ref(true);
+
+const handleInput = (e: Event) => {
+  const target = e.target as HTMLSelectElement;
+  search.value = target.value;
+  console.log(search.value);
+};
+const handleScroll = () => {
+  isAtTop.value = window.scrollY === 0;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+</script>
 
 <style></style>

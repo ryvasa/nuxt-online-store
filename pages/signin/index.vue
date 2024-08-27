@@ -1,11 +1,11 @@
 <template>
   <div
-    class="flex py-4 flex-col justify-start items-start max-h-screen h-screen fixed right-0 w-2/5 bg-gray-800 shadow-2xl shadow-gray-800"
+    class="flex py-4 flex-col justify-center lg:justify-start items-start max-h-screen h-screen fixed right-0 w-full lg:w-2/5 bg-gray-800 shadow-2xl shadow-gray-800"
   >
     <h1 class="text-3xl font-bold pl-8 pt-6 pb-4 text-primary">Sign In</h1>
     <div class="py-8 flex flex-col gap-3 w-full justify-center items-center">
       <form
-        class="flex flex-col justify-center items-center gap-2 w-full px-20"
+        class="flex flex-col justify-center items-center gap-2 w-full px-8 lg:px-20"
         action=""
       >
         <div class="flex flex-col gap-1 w-full">

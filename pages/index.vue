@@ -1,5 +1,7 @@
 <template>
-  <div class="w-screen"></div>
+  <div class="">
+    <Carousel />
+  </div>
 </template>
 
 <script setup></script>
