@@ -1,20 +1,17 @@
 <template>
   <div
-    className="group rounded-md shadow-xl relative flex justify-center items-center overflow-hidden"
+    class="group rounded-md overflow-hidden flex justify-center items-center"
   >
-    <figure>
-      <NuxtImg
-        src="category/122.jpg"
+    <div class="relative">
+      <img
+        src="../public/category/122.jpg"
         alt="Shoes"
         class="lg:h-72 object-cover"
       />
-    </figure>
-    <div
-      className="absolute h-full z-10 w-full justify-center items-center hidden group-hover:card-body hover:bg-black/50 hover:backdrop-blur-md "
-    >
-      <h2 className="card-title text-primary">Shoes</h2>
-      <div className="card-actions justify-end">
-        <button className="btn btn-primary">Buy Now</button>
+      <div
+        class="hidden h-full w-full transition-all duration-300 group-hover:bg-black/50 group-hover:flex justify-center items-center absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <button class="btn btn-primary btn-sm">Show All</button>
       </div>
     </div>
   </div>
